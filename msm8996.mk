@@ -83,17 +83,6 @@ PRODUCT_PACKAGES += $(WLAN_CHIPSET)_wlan.ko
 endif
 endif
 
-#ANT+ stack
-PRODUCT_PACKAGES += \
-    AntHalService \
-    libantradio \
-    antradio_app \
-    libvolumelistener
-
-# Sensor HAL conf file
-PRODUCT_COPY_FILES += \
-    device/qcom/msm8996/sensors/hals.conf:system/etc/sensors/hals.conf
-
 # Sensor features
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
@@ -156,7 +145,3 @@ endif
 ifneq (,$(strip $(wildcard $(PRODUCT_RENDERING_ENGINE_REVLIB))))
         MULTI_LANG_ENGINE := REVERIE
 endif
-
-# Defined the locales
-PRODUCT_LOCALES += th_TH vi_VN tl_PH hi_IN ar_EG ru_RU tr_TR pt_BR bn_IN mr_IN ta_IN te_IN zh_HK \
-        in_ID my_MM km_KH sw_KE uk_UA pl_PL sr_RS sl_SI fa_IR kn_IN ml_IN ur_IN gu_IN or_IN
